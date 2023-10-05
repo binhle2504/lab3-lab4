@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="">bai 3</div>
+    <script>
+        function calcAverageHumanAge(ages) {
+            // chuyen tuoi cho sang tuoi nguo
+            const humanAges = ages.map(age => (age <= 2 ? age * 2 : 16 + age * 4));
+
+            // loai bo cac cho duoi 18 tuoi
+            const adultHumanAges = humanAges.filter(age => age >= 18);
+
+            // tuoi trung binh
+            const sumAges = adultHumanAges.reduce((acc, age) => acc + age, 0);
+            const averageAge = sumAges / adultHumanAges.length;
+
+            return averageAge;
+        }
+
+        // du lieu 1
+        const testData1 = [5, 2, 4, 1, 15, 8, 3];
+        const averageAge1 = calcAverageHumanAge(testData1);
+        console.log(`Tuổi trung bình 1: ${averageAge1}`);
+
+        // du ieu 2
+        const testData2 = [16, 6, 10, 5, 6, 1, 4];
+        const averageAge2 = calcAverageHumanAge(testData2);
+        console.log(`Tuổi trung bình 2: ${averageAge2}`);
+
+    </script>
+</body>
+
+</html>
